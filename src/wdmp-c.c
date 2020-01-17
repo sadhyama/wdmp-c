@@ -71,7 +71,7 @@ void wdmp_parse_generic_request(char * payload, PAYLOAD_TYPE payload_type, req_s
         if (command != NULL)
         {
             out = cJSON_PrintUnformatted(request);
-
+	    WdmpInfo("Request out is %s\n", out);
             //allocate structure according to payload type
             if (payload_type == WDMP_TR181 || payload_type == WDMP_SNMP)
             {
