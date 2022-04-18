@@ -804,6 +804,11 @@ void wdmp_form_table_response(res_struct *resObj, cJSON *response)
 	{
 		strcpy(result,"Previous request is in progress");
 	}
+	else if (status == WDMP_ERR_SERVICE_UNAVAILABLE)
+	{
+		strcpy(result,"Service is unavailable");
+		WdmpInfo("wdmp status message: %s\n", result);
+	}
 	else 
 	{
 		strcpy(result,"Unknown Error");
